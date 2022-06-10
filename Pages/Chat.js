@@ -11,6 +11,7 @@ const style = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: 'black',
+    flex:1
   },
   action: {
     display: 'flex',
@@ -51,7 +52,7 @@ const Chat = ({ navigation }) => {
       <View style={style.container}>
         <View style={style.header}>
           <View style={style.action}>
-            <Pressable style={{ flexGrow: .27 }} onPress={() => navigation.navigate('home')}>
+            <Pressable style={{ flexGrow: .27 }} onPress={() => navigation.navigate('landing')}>
             <IconA name='arrowleft' size={25} color="white"  />
             </Pressable>
             <Text style={{ color: 'white', fontSize: 18.5, textAlignVertical: 'center', fontWeight: '700' }}>UserName</Text>
@@ -62,7 +63,7 @@ const Chat = ({ navigation }) => {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={style.search}>
-            <Input size="lg" placeholder="Search" bgColor={'#272727'} placeholderTextColor={"#b5b5b5"} variant="unstyled"
+            <Input selectionColor={'white'} borderRadius="lg" size="lg" placeholder="Search" bgColor={'#272727'} placeholderTextColor={"#b5b5b5"} variant="unstyled"
               style={{ height: 36, color: 'white', }} InputLeftElement={<IconA name="search1" size={18} color="#b5b5b5" style={{ paddingLeft: 12 }} />} />
           </View>
 
@@ -73,7 +74,10 @@ const Chat = ({ navigation }) => {
 
           <View style={style.message}>
 
-            <View style={style.singlechat}>
+           
+           
+           <Pressable onPress={() => navigation.navigate('singlechat')}>
+           <View style={style.singlechat}>
               <Avatar source={require('../images/shoe5.png')} size={58} />
               <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
                 <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
@@ -81,62 +85,7 @@ const Chat = ({ navigation }) => {
               </View>
               <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
             </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent studentpage reel. 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent studentpage reel. 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent studentpage reel. 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Liked a message . 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent 2h ago</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent studentpage reel. 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
-            <View style={style.singlechat}>
-              <Avatar source={require('../images/shoe5.png')} size={58} />
-              <View style={{ padding: 5, marginLeft: 15, flexGrow: 1 }}>
-                <Text style={{ color: 'white', marginTop: 3.2, fontSize: 13.5 }}>Dhritesh Kr</Text>
-                <Text style={{ color: '#9f9e9e', marginTop: -3, fontSize: 12.8 }}>Sent studentpage reel. 1h</Text>
-              </View>
-              <IconF name='camera' size={25} style={{ textAlignVertical: 'center', color: '#b5b5b5' }} />
-            </View>
+           </Pressable>
 
           </View>
         </ScrollView>
@@ -144,5 +93,5 @@ const Chat = ({ navigation }) => {
     </>
   )
 }
-
+    
 export default Chat

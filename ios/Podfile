@@ -19,6 +19,10 @@ target 'instagram' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'instagramTests' do
     inherit! :complete
     # Pods for testing

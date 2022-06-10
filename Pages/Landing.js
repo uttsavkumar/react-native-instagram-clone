@@ -3,35 +3,33 @@ import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 import IconMI from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/Entypo'
-import IconFA5P from 'react-native-vector-icons/FontAwesome5Pro'
 import IconFA5 from 'react-native-vector-icons/FontAwesome5'
 import Content from './Content.js'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
-import Chat from './Chat'
 
 const stories = [
   {
-    id:1,
-    name:'new',
-    image:require('../images/img.jpg')
+    id: 1,
+    name: 'new',
+    image: require('../images/img.jpg')
   },
   {
-    id:2,
-    name:'new1',
-    image:require('../images/img.jpg')  },
+    id: 2,
+    name: 'new1',
+    image: require('../images/img.jpg')
+  },
   {
-    id:3,
-    name:'new2',
-    image:require('../images/img.jpg')  },
+    id: 3,
+    name: 'new2',
+    image: require('../images/img.jpg')
+  },
   {
-    id:4,
-    name:'new3',
-    image:require('../images/img.jpg')  },
+    id: 4,
+    name: 'new3',
+    image: require('../images/img.jpg')
+  },
 ]
 
-
-const HomePage = ({ navigation }) => {
-
+const Landing = ({navigation}) => {
   return (
     <>
 
@@ -51,7 +49,7 @@ const HomePage = ({ navigation }) => {
 
           <Pressable onPress={() => navigation.navigate('chat')}>
 
-            <Image source={require('../images/chat.png')} alt="Chat" style={{height:25,width:25}}/>
+            <Image source={require('../images/chat.png')} alt="Chat" style={{ height: 25, width: 25 }} />
             <View style={style.badgediv}>
               <Text style={style.badgetext}>4</Text>
             </View>
@@ -87,18 +85,18 @@ const HomePage = ({ navigation }) => {
                 </View> */}
 
                 {/* Other's Story */}
-               {stories.map((item,key) => (
+                {stories.map((item, key) => (
                   <View key={key}>
-                  <View style={style.avatardiv}>
-                    <Avatar style={style.avatar}>
-                      <Image alt="story" source={item.image} style={{ height: 60, width: 60, borderRadius: 30 }} />
-                    </Avatar>
+                    <View style={style.avatardiv}>
+                      <Avatar style={style.avatar}>
+                        <Image alt="story" source={item.image} style={{ height: 60, width: 60, borderRadius: 30 }} />
+                      </Avatar>
+                    </View>
+                    <Text style={{ color: 'white', fontSize: 10.4, fontWeight: '600', alignSelf: 'center', marginLeft: 10 }}>{item.name}</Text>
                   </View>
-                  <Text style={{ color: 'white', fontSize: 10.4, fontWeight: '600', alignSelf: 'center', marginLeft: 10 }}>{item.name}</Text>
-                </View>
-               ))}
-               
-               
+                ))}
+
+
 
               </View>
             </ScrollView>
@@ -109,24 +107,6 @@ const HomePage = ({ navigation }) => {
         </ScrollView>
 
       </View>
-    </>
-  )
-
-}
-
-
-//Top Navigation 
-const Top = createMaterialTopTabNavigator()
-
-const Landing = () => {
-  return (
-    <>
-
-      <Top.Navigator tabBar={() => null}>
-        <Top.Screen component={HomePage} name='home' />
-        <Top.Screen component={Chat} options={{ headerShown: false }} name='chat' />
-      </Top.Navigator>
-
     </>
   )
 }
