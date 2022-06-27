@@ -1,5 +1,5 @@
 import { Image, Pressable, Text, View, Avatar } from 'native-base'
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 import IconMI from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/Entypo'
@@ -29,7 +29,9 @@ const stories = [
   },
 ]
 
+
 const Landing = ({navigation}) => {
+ 
   return (
     <>
 
@@ -40,7 +42,7 @@ const Landing = ({navigation}) => {
           <Image source={require('../images/logo.png')} alt="logo" style={{ height: 30, width: 105, marginLeft: 20 }} />
           <View style={{ flexGrow: .78 }}></View>
 
-          <Pressable onPress={() => console.log('skdkh')}>
+          <Pressable onPress={() => navigation.navigate('addpost')}>
             <View style={style.addicondiv}>
               <IconE name='plus' style={style.addicon} />
             </View>
@@ -107,6 +109,7 @@ const Landing = ({navigation}) => {
         </ScrollView>
 
       </View>
+     
     </>
   )
 }

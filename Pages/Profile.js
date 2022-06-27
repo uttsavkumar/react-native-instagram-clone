@@ -8,6 +8,7 @@ import IconFA from 'react-native-vector-icons/FontAwesome'
 import IconI from 'react-native-vector-icons/Ionicons'
 import IconSLI from 'react-native-vector-icons/SimpleLineIcons'
 import ProfileImage from '../Profile/ProfileImage'
+import auth from '@react-native-firebase/auth';
 
 const ModalContent = () => {
   return (
@@ -15,12 +16,14 @@ const ModalContent = () => {
       <Modal.Content  style={{ borderTopLeftRadius:20,borderTopRightRadius:20,backgroundColor:'#262626', marginBottom: 0,marginTop: "auto" }}>   
         <Modal.Body style={{ padding: 0, margin: 0,backgroundColor:'#262626',height:350 }}>
           <VStack style={{ padding:1}}>
+              <Pressable onPress={() => auth().signOut()}>
               <Box style={{ marginTop:20 }}>
                 <HStack>
                   <IconI name='ios-settings-outline' size={27} color='white' style={{marginRight:20,marginLeft:1.5}}/>
                   <Text style={{ color:'white',fontSize:16,textAlignVertical:'center',fontWeight:'600' }}>Settings</Text>
                 </HStack>
               </Box>
+              </Pressable>
               <Box style={{ marginTop:15 }}>
                 <HStack>
                   <IconE name='back-in-time' size={27} color='white' style={{marginRight:20}}/>

@@ -40,7 +40,7 @@ const SingleChat = ({ navigation }) => {
       msg: 'hi',
       type: 'self'
     },
-    
+
 
   ]
   return (
@@ -51,6 +51,7 @@ const SingleChat = ({ navigation }) => {
             <Pressable style={{ flexGrow: .15 }} onPress={() => navigation.navigate('chat')}>
               <IconA name='arrowleft' size={25} color="white" />
             </Pressable>
+
             <View style={{ flexGrow: .68, flexDirection: 'row' }}>
               <Avatar source={require('../images/shoe5.png')} size={35} />
               <View style={{ flexDirection: 'column', marginLeft: 15 }}>
@@ -82,7 +83,7 @@ const SingleChat = ({ navigation }) => {
               :
               <>
                 <View style={style.friendchat}>
-                  <Avatar source={require('../images/shoe5.png')} size={7} margin='1' ml={2}/>
+                  <Avatar source={require('../images/shoe5.png')} size={7} margin='1' ml={2} />
                   <View style={style.friend}>
                     <Text style={{ color: 'white', fontSize: 15.5 }}>{item.msg}</Text>
                   </View>
